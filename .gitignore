@@ -1,8 +1,2 @@
-/.build/*
-/.ddev/docker-compose.chrome.yaml
-/config/*
-/Documentation-GENERATED-temp/*
-/var/*
-/.php-cs-fixer.cache
-/composer.lock
-/.idea
+.build
+var
