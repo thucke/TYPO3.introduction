@@ -11,13 +11,13 @@ set -u
 
 dotEnvFile="${WORKSPACE_ROOT}/.devcontainer/docker/typo3/TYPO3.env"
 
-if [[ ${DB_SERVER_TYPE} =~ (mysql|mariadb) ]]; then
-  export TYPO3_INSTALL_DB_DRIVER="mysqli"
-  export TYPO3_INSTALL_DB_DBNAME="${MYSQLI_DBNAME}"
-elif [ "${DB_SERVER_TYPE}" == "sqlite" ]; then
-  export TYPO3_INSTALL_DB_DRIVER="pdo_sqlite"
-  export TYPO3_INSTALL_DB_DBNAME="${SQLITE_DBFILE_PATH}"
-fi
+#if [[ ${DB_SERVER_TYPE} =~ (mysql|mariadb) ]]; then
+#  export TYPO3_INSTALL_DB_DRIVER="mysqli"
+#  export TYPO3_INSTALL_DB_DBNAME="${MYSQLI_DBNAME}"
+#elif [ "${DB_SERVER_TYPE}" == "sqlite" ]; then
+#  export TYPO3_INSTALL_DB_DRIVER="pdo_sqlite"
+#  export TYPO3_INSTALL_DB_DBNAME="${SQLITE_DBFILE_PATH}"
+#fi
 
 # check if env file exists - if not copy default from .devcontainer
 #if [ ! -f ${dotEnvFile} ]; then
