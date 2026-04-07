@@ -27,7 +27,7 @@ if test ! -d .build/vendor; then
   composer config bin-dir .build/bin
   composer config vendor-dir .build/vendor
   composer config extra.typo3/cms.web-dir .build/public
-  composer config extra.helhum/dotenv-connector.env-file TYPO3.env
+  composer config extra.helhum/dotenv-connector.env-file .devcontainer/docker/typo3/TYPO3.env
   composer install
   # Add .build/bin to PATH
   [[ ":$PATH:" != *":${WORKSPACE_ROOT}/.build/bin:"* ]] && export PATH="${WORKSPACE_ROOT}/.build/bin:${PATH}"
