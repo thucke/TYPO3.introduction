@@ -8,14 +8,14 @@ set +u
 # quit if env vars have been already set
 [ -n "${TYPO3_INSTALL_DB_DRIVER}" ] && echo ".env alread set" && return 0
 set -u
-
-dotEnvFile="$(dirname $WORKSPACE_ROOT)/TYPO3.env"
+set -x
+dotEnvFile="${WORKSPACE_ROOT}/.devcontainer/docker/typo3/TYPO3.env"
 
 # check if env file exists - if not copy default from .devcontainer
-if [ ! -f ${dotEnvFile} ]; then
-	echo "${dotEnvFile} file not found - copying default from DEV"
-	cp -fv ${WORKSPACE_ROOT}/.devcontainer/docker/typo3/TYPO3.env.tmpl ${dotEnvFile}
-fi
+#if [ ! -f ${dotEnvFile} ]; then
+#	echo "${dotEnvFile} file not found - copying default from DEV"
+#	cp -fv ${WORKSPACE_ROOT}/.devcontainer/docker/typo3/TYPO3.env.tmpl ${dotEnvFile}
+#fi
 
 # parse .env file
 if [ -f $dotEnvFile ]; then
