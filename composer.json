@@ -56,7 +56,8 @@
         "allow-plugins": {
             "ergebnis/composer-normalize": true,
             "typo3/cms-composer-installers": true,
-            "typo3/class-alias-loader": true
+            "typo3/class-alias-loader": true,
+            "helhum/dotenv-connector": true
         },
         "bin-dir": ".build/bin",
         "optimize-autoloader": true,
@@ -70,6 +71,9 @@
         "typo3/cms": {
             "extension-key": "introduction",
             "web-dir": ".build/public"
+        },
+        "helhum/dotenv-connector": {
+            "env-file": ".devcontainer/docker/typo3/TYPO3.env"
         }
     },
     "scripts": {
