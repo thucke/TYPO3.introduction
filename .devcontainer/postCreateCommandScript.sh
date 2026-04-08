@@ -4,13 +4,7 @@ set -eu
 # post start script
 echo "BEGIN: postCreateCommandScript.sh"
 
-if [[ ${DB_SERVER_TYPE} =~ (mysql|mariadb) ]]; then
-  export TYPO3_INSTALL_DB_DRIVER="mysqli"
-  export TYPO3_INSTALL_DB_DBNAME="${MYSQLI_DBNAME}"
-elif [ "${DB_SERVER_TYPE}" == "sqlite" ]; then
-  export TYPO3_INSTALL_DB_DRIVER="pdo_sqlite"
-  export TYPO3_INSTALL_DB_DBNAME="${SQLITE_DBFILE_PATH}"
-fi
+source .devcontainer/docker/parseDotEnv.sh
 
 # check if docker containers are already running only if docker cli is installed
 if [ -n `which docker` ] && [ "${DB_SERVER_TYPE:-sqlite}" != "sqlite" ]; then

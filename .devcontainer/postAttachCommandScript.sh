@@ -5,3 +5,4 @@ set -eu
 echo "BEGIN: postAttachCommandScript.sh"
 .devcontainer/docker/frankenphp/server.sh
 echo "END: postAttachCommandScript.sh"
+exit

@@ -17,9 +17,7 @@ if [ "${DB_SERVER_TYPE}" == "sqlite" ]; then
 else
   echo "igniteEnvironment.sh: No need to create SqLite datafile directory"
 fi
-set -x
 
-echo "${TYPO3_INSTALL_DB_PORT}"
 if [ "${TYPO3_INSTALL_DB_DRIVER}" == "mysqli" ]; then
   echo "Using MySQL/MariaDB as database - resetting database"
   # Drop all database tables
@@ -32,7 +30,7 @@ elif [ "${TYPO3_INSTALL_DB_DRIVER}" == "pdo_sqlite" ] && [ -f ${SQLITE_DBFILE_PA
   echo "Using SQLite as database - resetting database"
   rm -fv ${SQLITE_DBFILE_PATH}
 fi
-exit
+
 if [ -f ${WORKSPACE_ROOT}/composer.json ]; then
   echo "initializeTYPO3.sh: Found composer.json - running initializeTYPO3.sh"
   chmod +x .devcontainer/docker/initializeTYPO3.sh
