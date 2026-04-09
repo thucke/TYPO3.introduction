@@ -6,10 +6,10 @@ Homepage: [Github](https://github.com/thucke/devcontainer-templates/tree/main/sr
 
   After the TYPO3 devcontainer environment came up you will find in a container running Debian Trixie:
 
-  * User: `typo3dev`
-  * Homedirectory: `/home/typo3dev`
-  * SUDO-command: *passwordless for any command*
-  * Git-Repository: checked out to `${WORKSPACE_ROOT}`
+* User: `typo3dev`
+* Homedirectory: `/home/typo3dev`
+* SUDO-command: *passwordless for any command*
+* Git-Repository: checked out to `${WORKSPACE_ROOT}`
 
 ## TYPO3 WebUI
 
@@ -30,6 +30,7 @@ If you want to update the devcontainer configuration e.g. after a new template v
     devcontainer templates apply --template-id ghcr.io/thucke/devcontainer-templates/typo3  --template-args "{\"database\": \"mysql\", \"phpVersion\": \"8.4\"}" -w .
 
 Valid values:
+
 * `database`: `mysql` || `mariadb` ||`sqlite`
 * `phpVersion`: `8.2` || `8.3` || `8.4` || `8.5`
 
