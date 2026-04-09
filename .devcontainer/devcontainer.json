@@ -18,9 +18,9 @@
 		"TZ": "Europe/Berlin",
 		"WORKSPACE_ROOT": "${containerWorkspaceFolder}",
 		"TYPO3_INSTALL_WEB_SERVER_CONFIG": "other",
-		"COMPOSE_PROFILES": "frankenphp, mysql",
+		"COMPOSE_PROFILES": "frankenphp, mariadb",
 		"COMPOSE_PROJECT_NAME": "typo3-devcontainer",
-		"DB_SERVER_TYPE": "mysql",
+		"DB_SERVER_TYPE": "mariadb",
 		"MYSQLI_DBNAME": "db",
 		"SQLITE_DBFILE_PATH": "${containerWorkspaceFolder}/var/lib/sqlite/typo3.db",
 		"TYPO3_CONTEXT": "Development",
@@ -46,7 +46,7 @@
 			"label": "Mysql/MariaDB database"
 		},
 		"8080": {
-			"label": "Mysql Adminer"
+			"label": "Mysql/MariaDB Adminer"
 		}
 	},
 	"onCreateCommand": "chmod -c +x .devcontainer/onCreateCommandScript.sh && .devcontainer/onCreateCommandScript.sh",

@@ -10,12 +10,12 @@ Homepage: [Github](https://github.com/thucke/devcontainer-templates/tree/main/sr
   * Homedirectory: `/home/typo3dev`
   * SUDO-command: *passwordless for any command*
   * Git-Repository: checked out to `${WORKSPACE_ROOT}`
-  
+
 ## TYPO3 WebUI
 
 URL: [Frontend](http://127.0.0.1)
 
-First calls to TYPO3 my result to exceptions in the file `.build/vendor/scssphp/scssphp/src/Compiler.php`. I don't have an idea about the reason but they will disappear after one or two refreshes.  
+First calls to TYPO3 my result to exceptions in the file `.build/vendor/scssphp/scssphp/src/Compiler.php`. I don't have an idea about the reason but they will disappear after one or two refreshes.
 
 ## Re-Initialize TYPO3 environment
 
@@ -30,7 +30,7 @@ If you want to update the devcontainer configuration e.g. after a new template v
     devcontainer templates apply --template-id ghcr.io/thucke/devcontainer-templates/typo3  --template-args "{\"database\": \"mysql\", \"phpVersion\": \"8.4\"}" -w .
 
 Valid values:
-* `database`: `mysql` || `sqlite`
+* `database`: `mysql` || `mariadb` ||`sqlite`
 * `phpVersion`: `8.2` || `8.3` || `8.4` || `8.5`
 
 ## TYPO3 environment configuration
