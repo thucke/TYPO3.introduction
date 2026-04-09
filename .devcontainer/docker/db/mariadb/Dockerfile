@@ -1,3 +1,1 @@
-FROM mysql:10.11
-
-
+FROM mariadb:12-ubi
