@@ -62,9 +62,6 @@ services:
       start_interval: 10s
   mariadb:
     image: mariadb:12-ubi
-    #build:
-    #  context: ..
-    #  dockerfile: ${WORKSPACE_ROOT}/.devcontainer/docker/db/mariadb/Dockerfile
     command: mariadbd
     restart: unless-stopped
     volumes:

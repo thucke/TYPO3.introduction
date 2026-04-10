@@ -46,7 +46,21 @@ Valid values:
 
 You may prefer to use a db client extension of your IDE or the preinstalled adminer web UI that can be reached out with [this link](http://127.0.0.1:8080) after all containers started successfully.
 
-* Host: `127.0.0.1`
+* Host
+  * VS Code: `127.0.0.1`
+  * Adminer: `mysql`
+* Port: `3306`
+* Database: `db`
+* Username: `root`
+* Password: `dbroot`
+
+### `mariadb`
+
+You may prefer to use a db client extension of your IDE or the preinstalled adminer web UI that can be reached out with [this link](http://127.0.0.1:8080) after all containers started successfully.
+
+* Host
+  * VS Code: `127.0.0.1`
+  * Adminer: `mariadb`
 * Port: `3306`
 * Database: `db`
 * Username: `root`
