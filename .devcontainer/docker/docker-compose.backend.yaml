@@ -37,9 +37,9 @@ services:
     restart: unless-stopped
     volumes:
       #- db-data:/var/lib/mysql
-      - type: bind
-        source: ${WORKSPACE_ROOT}/.devcontainer/docker/db/mysql/custom.cnf
-        target: /etc/mysql/conf.d/custom.cnf
+      #- type: bind
+      #  source: ${WORKSPACE_ROOT}/.devcontainer/docker/db/mysql/custom.cnf
+      #  target: /etc/mysql/conf.d/custom.cnf
       - type: bind
         source: ${WORKSPACE_ROOT}/.devcontainer/docker/db/initdb
         target: /docker-entrypoint-initdb.d
@@ -61,15 +61,16 @@ services:
       start_period: 15s
       start_interval: 10s
   mariadb:
-    build:
-      context: ..
-      dockerfile: ${WORKSPACE_ROOT}/.devcontainer/docker/db/mariadb/Dockerfile
+    image: mariadb:12-ubi
+    #build:
+    #  context: ..
+    #  dockerfile: ${WORKSPACE_ROOT}/.devcontainer/docker/db/mariadb/Dockerfile
     command: mariadbd
     restart: unless-stopped
     volumes:
-      - type: bind
-        source: ${WORKSPACE_ROOT}/.devcontainer/docker/db/mariadb/custom.cnf
-        target: /etc/my.cnf.d/custom.cnf
+      #- type: bind
+      #  source: ${WORKSPACE_ROOT}/.devcontainer/docker/db/mariadb/custom.cnf
+      #  target: /etc/my.cnf.d/custom.cnf
       - type: bind
         source: ${WORKSPACE_ROOT}/.devcontainer/docker/db/initdb
         target: /docker-entrypoint-initdb.d
