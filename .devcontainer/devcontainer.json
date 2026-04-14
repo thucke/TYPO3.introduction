@@ -19,7 +19,7 @@
 		"TZ": "Europe/Berlin",
 		"WORKSPACE_ROOT": "${containerWorkspaceFolder}",
 		"TYPO3_INSTALL_WEB_SERVER_CONFIG": "other",
-		"COMPOSE_PROFILES": "frankenphp, mariadb",
+		"COMPOSE_PROFILES": "frankenphp",
 		"COMPOSE_PROJECT_NAME": "typo3-devcontainer",
 		"DB_SERVER_TYPE": "postgres",
 		"DB_SERVER_DBNAME": "db",

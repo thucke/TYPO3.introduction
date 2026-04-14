@@ -94,7 +94,7 @@ services:
     restart: unless-stopped
     volumes:
       - type: bind
-        source: ${WORKSPACE_ROOT}/.devcontainer/docker/db/initdb
+        source: ${WORKSPACE_ROOT}/.devcontainer/docker/db/postgres/initdb
         target: /docker-entrypoint-initdb.d
     networks:
       - devcontainer
@@ -120,7 +120,7 @@ services:
       TZ: "Europe/Berlin"
     networks:
       - devcontainer
-    profiles: [mysql, mariadb]
+    profiles: [mysql, mariadb, postgres]
     ports:
       - 8080:8080
     depends_on:

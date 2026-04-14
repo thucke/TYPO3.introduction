@@ -8,6 +8,10 @@ pushd ${WORKSPACE_ROOT}
 
 source .devcontainer/docker/parseDotEnv.sh
 
+# take care of file ownership esp. to support cross container functionality
+echo "igniteEnvironment.sh: Update file and directory ownership"
+sudo chown -Rc ${DEVCONTAINER_SERVICE_NAME}:${DEVCONTAINER_SERVICE_NAME} config .build var
+
 echo "igniteEnvironment.sh: Reset environment"
 rm -rf config .build/bin .build/public .build/vendor var
 mkdir -vp .build/public var/log/ var/lib
