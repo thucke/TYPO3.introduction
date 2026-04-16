@@ -33,6 +33,13 @@ if [ "${TYPO3_INSTALL_DB_DRIVER}" == "mysqli" ]; then
 elif [ "${TYPO3_INSTALL_DB_DRIVER}" == "sqlite" ] && [ -f ${SQLITE_DBFILE_PATH} ]; then
   echo "Using SQLite as database - resetting database"
   rm -fv ${SQLITE_DBFILE_PATH}
+elif [ "${TYPO3_INSTALL_DB_DRIVER}" == "postgres" ]; then
+  echo "Using PostgreSQL as database - resetting database"
+  # Drop all database tables
+  echo "SET CONSTRAINTS ALL DEFERRED;
+        $(psql --dbname=${TYPO3_INSTALL_DB_DBNAME} -h ${TYPO3_INSTALL_DB_HOST} --port=${TYPO3_INSTALL_DB_PORT} -U ${TYPO3_INSTALL_DB_USER} -t --csv --command '\dt'|cut -d, -f2|xargs -I% echo 'DROP TABLE % CASCADE;')
+        SET CONSTRAINTS ALL IMMEDIATE;" | \
+    psql --dbname=${TYPO3_INSTALL_DB_DBNAME} -h ${TYPO3_INSTALL_DB_HOST} --port=${TYPO3_INSTALL_DB_PORT} -U ${TYPO3_INSTALL_DB_USER}
 fi
 
 if [ -f ${WORKSPACE_ROOT}/composer.json ]; then
