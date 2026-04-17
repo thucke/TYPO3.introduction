@@ -21,7 +21,7 @@
 		"TYPO3_INSTALL_WEB_SERVER_CONFIG": "other",
 		"COMPOSE_PROFILES": "frankenphp",
 		"COMPOSE_PROJECT_NAME": "typo3-devcontainer",
-		"DB_SERVER_TYPE": "mariadb",
+		"DB_SERVER_TYPE": "sqlite",
 		"DB_SERVER_DBNAME": "db",
 		"DB_SERVER_PORT_MYSQL_MARIADB": "3306",
 		"DB_SERVER_PORT_POSTGRESQL": "5432",
