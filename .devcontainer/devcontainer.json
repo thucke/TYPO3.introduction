@@ -1,6 +1,6 @@
 {
 	"name": "TYPO3 Dev Container",
-	"image": "ghcr.io/thucke/devcontainers/typo3-frankenphp:1-php8.4-trixie",
+	"image": "ghcr.io/thucke/devcontainers/typo3-php-apache:8.4-apache-trixie",
 	"runArgs": [
 		"--env-file=.devcontainer/.env",
 		"--workdir=/workspaces/${localWorkspaceFolderBasename}"
@@ -17,9 +17,10 @@
 	},
 	"containerEnv": {
 		"TZ": "Europe/Berlin",
+		"LANG": "en_US.UTF-8",
 		"WORKSPACE_ROOT": "${containerWorkspaceFolder}",
-		"TYPO3_INSTALL_WEB_SERVER_CONFIG": "other",
-		"COMPOSE_PROFILES": "frankenphp",
+		"TYPO3_INSTALL_WEB_SERVER_CONFIG": "apache",
+		"COMPOSE_PROFILES": "apache",
 		"COMPOSE_PROJECT_NAME": "typo3-devcontainer",
 		"DB_SERVER_TYPE": "sqlite",
 		"DB_SERVER_DBNAME": "db",

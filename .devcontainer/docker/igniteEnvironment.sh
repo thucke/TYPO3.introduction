@@ -50,16 +50,5 @@ else
   echo "No composer.json found - skipping initializeTYPO3.sh and composer up"
 fi
 
-if [[ "${COMPOSE_PROFILES}" =~ "php-fpm" ]]; then
-    echo "igniteEnvironment.sh: Checking for running php-fpm"
-    .devcontainer/php-fpm/server.sh restart
-elif [[ "${COMPOSE_PROFILES}" =~ "apache" ]]; then
-    echo "igniteEnvironment.sh: Restarting Apache"
-    .devcontainer/php-fpm/server.sh
-elif [[ "${COMPOSE_PROFILES}" =~ "frankenphp" ]]; then
-    echo "igniteEnvironment.sh: Restarting FrankenPHP"
-    .devcontainer/docker/frankenphp/server.sh restart
-fi
-
 echo "END: igniteEnvironment.sh"
 popd
