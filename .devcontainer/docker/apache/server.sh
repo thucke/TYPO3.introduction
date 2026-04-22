@@ -14,7 +14,7 @@ fi
 
 if test ! -f /etc/apache2/sites-enabled/001-typo3.conf; then
   echo "server.sh (apache): Setting up Apache virtual server for TYPO3"
-  sudo rm -f /etc/apache2/sites-enabled/000-default.confls
+  sudo rm -f /etc/apache2/sites-enabled/000-default.conf
   sudo cp -v .devcontainer/docker/apache/001-typo3.conf /etc/apache2/sites-available/
   sudo ln -s /etc/apache2/sites-available/001-typo3.conf /etc/apache2/sites-enabled/001-typo3.conf
 fi
