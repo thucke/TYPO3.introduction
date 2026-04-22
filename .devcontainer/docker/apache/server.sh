@@ -8,13 +8,22 @@ if [[ ! ${COMPOSE_PROFILES} =~ "apache" ]]; then
 fi
 
 if test ! -f .build/public/.htaccess; then
+  echo "server.sh (apache): Copying .htaccess to public folder"
   cp -v .devcontainer/docker/apache/.htaccess .build/public
+fi
+
+if test ! -f /etc/apache2/sites-enabled/001-typo3.conf; then
+  echo "server.sh (apache): Setting up Apache virtual server for TYPO3"
+  sudo rm -f /etc/apache2/sites-enabled/000-default.confls
+  sudo cp -v .devcontainer/docker/apache/001-typo3.conf /etc/apache2/sites-available/
+  sudo ln -s /etc/apache2/sites-available/001-typo3.conf /etc/apache2/sites-enabled/001-typo3.conf
 fi
 
 sudo find .build/public -name .htaccess -exec chmod -c 0660 {} \;
 sudo find var -name .htaccess -exec chmod -c 0660 {} \;
 sudo find .build/public -name index.html -exec chmod -c 0660 {} \;
 
+echo "server.sh (apache): Restarting Apache server"
 sudo apachectl -k restart
 echo "Devcontainer: Apache server started"
 

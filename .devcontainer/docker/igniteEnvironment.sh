@@ -50,5 +50,12 @@ else
   echo "No composer.json found - skipping initializeTYPO3.sh and composer up"
 fi
 
+if [ "%1" == "postCreateCommand" ]; then
+  echo "igniteEnvironment.sh: Post create command - skipping server restart"
+else
+  echo "igniteEnvironment.sh: restarting server if necessary"
+  .devcontainer/postAttachCommandScript.sh
+fi
+
 echo "END: igniteEnvironment.sh"
 popd
