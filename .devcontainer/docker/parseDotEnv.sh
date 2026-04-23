@@ -11,6 +11,7 @@ set -u
 
 dotEnvFile="${WORKSPACE_ROOT}/.devcontainer/docker/typo3/TYPO3.env"
 
+set -x
 if [[ ${DB_SERVER_TYPE} =~ (mysql|mariadb) ]]; then
   export TYPO3_INSTALL_DB_DRIVER=mysqli
   export TYPO3_INSTALL_DB_DBNAME="${DB_SERVER_DBNAME}"
@@ -24,6 +25,13 @@ elif [ "${DB_SERVER_TYPE}" == "postgresql" ]; then
   export TYPO3_INSTALL_DB_DRIVER=postgres
   export TYPO3_INSTALL_DB_DBNAME="${DB_SERVER_DBNAME}"
   export DB_SERVER_PORT=${DB_SERVER_PORT_POSTGRESQL}
+fi
+set +x
+
+if [[ ${COMPOSE_PROFILES} =~ "apache" ]]; then
+  export TYPO3_INSTALL_WEB_SERVER_CONFIG=apache
+else
+  export TYPO3_INSTALL_WEB_SERVER_CONFIG=other
 fi
 
 # parse .env file

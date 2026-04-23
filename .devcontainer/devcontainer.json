@@ -19,7 +19,6 @@
 		"TZ": "Europe/Berlin",
 		"LANG": "en_US.UTF-8",
 		"WORKSPACE_ROOT": "${containerWorkspaceFolder}",
-		"TYPO3_INSTALL_WEB_SERVER_CONFIG": "apache",
 		"COMPOSE_PROFILES": "apache",
 		"COMPOSE_PROJECT_NAME": "typo3-devcontainer",
 		"DB_SERVER_TYPE": "mysql",
