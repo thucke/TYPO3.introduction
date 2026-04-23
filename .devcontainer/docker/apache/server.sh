@@ -14,14 +14,16 @@ fi
 
 if test ! -f /etc/apache2/sites-enabled/001-typo3.conf; then
   echo "server.sh (apache): Setting up Apache virtual server for TYPO3"
-  sudo rm -f /etc/apache2/sites-enabled/000-default.conf
+  find /etc/apache2/sites-enabled -name "*.conf" -exec sudo a2dissite {} \;
+  find /etc/apache2/sites-enabled -name "*.conf" -exec sudo rm -fv {} \;
   sudo cp -v .devcontainer/docker/apache/001-typo3.conf /etc/apache2/sites-available/
-  sudo ln -s /etc/apache2/sites-available/001-typo3.conf /etc/apache2/sites-enabled/001-typo3.conf
+  sudo a2ensite 001-typo3
 fi
 
 sudo find .build/public -name .htaccess -exec chmod -c 0660 {} \;
 sudo find var -name .htaccess -exec chmod -c 0660 {} \;
 sudo find .build/public -name index.html -exec chmod -c 0660 {} \;
+mkdir -pv var/log/apache2
 
 echo "server.sh (apache): Restarting Apache server"
 sudo apachectl -k restart
