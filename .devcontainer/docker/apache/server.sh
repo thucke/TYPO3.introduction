@@ -14,8 +14,6 @@ fi
 
 if test ! -f /etc/apache2/sites-enabled/001-typo3.conf; then
   echo "server.sh (apache): Setting up Apache virtual server for TYPO3"
-  find /etc/apache2/sites-enabled -name "*.conf" -exec sudo a2dissite {} \;
-  find /etc/apache2/sites-enabled -name "*.conf" -exec sudo rm -fv {} \;
   sudo cp -v .devcontainer/docker/apache/001-typo3.conf /etc/apache2/sites-available/
   sudo a2ensite 001-typo3
 fi
