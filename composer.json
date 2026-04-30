@@ -34,6 +34,8 @@
         "codeception/module-asserts": "^3.0",
         "codeception/module-webdriver": "^4.0",
         "ergebnis/composer-normalize": "^2.0",
+        "helhum/dotenv-connector": "^3.2",
+        "helhum/typo3-console": "^8.3",
         "typo3/cms-belog": "^12.4 || ^13.4 || 13.*.*@dev",
         "typo3/cms-lowlevel": "^12.4 || ^13.4 || 13.*.*@dev",
         "typo3/cms-scheduler": "^12.4 || ^13.4 || 13.*.*@dev",
