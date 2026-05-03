@@ -20,7 +20,7 @@ services:
     ports:
       - '80:80'
     volumes:
-      - ${WORKSPACE_ROOT}:/workspaces/TYPO3.introduction:rw,cached
+      - ${WORKSPACE_ROOT}:/workspace:rw,cached
       #- /etc/letsencrypt/live/:/etc/letsencrypt/live
       #- /etc/letsencrypt/archive:/etc/letsencrypt/archive
       #- /etc/ssl/:/etc/ssl
