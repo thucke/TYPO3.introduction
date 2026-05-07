@@ -43,7 +43,5 @@ server {
 
     include '/etc/nginx/includes/cache-header.conf';
     include '/etc/nginx/includes/compression.conf';
-    include '/etc/nginx/includes/status.conf';
-    include '/etc/nginx/includes/ping.conf';
     include '/etc/nginx/includes/typo3.conf';
 }
