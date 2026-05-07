@@ -20,9 +20,9 @@ fi
 if [ $(sudo pidof php-fpm| wc -w) -eq 0 ]; then
   echo "server.sh: Copy TYPO3 PHP configuration for php-fpm"
   sudo cp -fv ${WORKSPACE_ROOT}/.devcontainer/docker/php-fpm/www.conf /usr/local/etc/php-fpm.d/www.conf
-  sudo cp -fv ${WORKSPACE_ROOT}/.devcontainer/docker/typo3/php.ini /etc/php8/fpm/php.ini
+  sudo cp -fv ${WORKSPACE_ROOT}/.devcontainer/docker/typo3/php.ini ${PHP_INI_DIR}/php.ini
   echo "server.sh: Starting php-fpm in daemon mode"
-  nohup php-fpm -D -c /etc/php8/fpm  >/dev/null 2>&1 &
+  nohup php-fpm >/dev/null 2>&1 &
   echo "Devcontainer: php-fpm server started (PID: $!))"
 else
   echo "Devcontainer: php-fpm server already running (PID: $(sudo pidof php-fpm))"

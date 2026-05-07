@@ -73,7 +73,8 @@
 				"files.autoSave": "afterDelay",
 				"files.autoSaveDelay": 1000,
 				"git.postCommitCommand": "push",
-				"git.path": "/usr/bin/git"
+				"git.path": "/usr/bin/git",
+				"terminal.integrated.allowInUntrustedWorkspace": true
 			},
 			"extensions": [
 				"cweijan.vscode-database-client2",
