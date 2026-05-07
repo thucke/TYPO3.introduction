@@ -10,8 +10,7 @@ if ($applicationContext->isDevelopment()) {
         [
             'SYS' => [
                 'exceptionalErrors' => getenv('TYPO3_CONFIG_SYS_EXCEPTIONALERRORS'),
-                'systemLocale' => 'en_US',
-                'trustedHostsPattern' => '127.0.0.1|localhost',
+                'systemLocale' => 'en_US'
             ],
         ]
     );
