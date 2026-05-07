@@ -15,6 +15,8 @@ sudo chown -Rc ${DEVCONTAINER_SERVICE_NAME}:${DEVCONTAINER_SERVICE_NAME} config 
 echo "igniteEnvironment.sh: Reset environment"
 rm -rf config .build/bin .build/public .build/vendor var
 mkdir -vp .build/public /.build/run var/log/ var/lib
+cp -v .devcontainer/docker/typo3/ping.txt .build/public/ping.txt
+
 if [ "${DB_SERVER_TYPE}" == "sqlite" ]; then
   rm -fv ${SQLITE_DBFILE_PATH}
   mkdir -vp $(dirname ${SQLITE_DBFILE_PATH})
