@@ -26,6 +26,12 @@ elif [ "${DB_SERVER_TYPE}" == "postgresql" ]; then
     export DB_SERVER_PORT=${DB_SERVER_PORT_POSTGRESQL}
 fi
 
+if [[ ${COMPOSE_PROFILES} =~ "apache" ]]; then
+    export TYPO3_INSTALL_WEB_SERVER_CONFIG="apache"
+else
+    export TYPO3_INSTALL_WEB_SERVER_CONFIG="other"
+fi
+
 # parse .env file
 if [ -f $dotEnvFile ]; then
     echo "Parsing .env file $dotEnvFile"
